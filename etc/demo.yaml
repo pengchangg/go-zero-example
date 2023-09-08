@@ -1,0 +1,19 @@
+Name: demo.rpc
+ListenOn: 0.0.0.0:8080
+Mode: dev
+
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: demo.rpc
+
+Mysql:
+  DataSource: root:123456@tcp(192.168.20.103:3306)/ent_demo
+
+Redis:
+  Host: localhost:6379
+  Type: node
+  Key: demo.rpc.redisKsy
+
+Cache:
+  - Host: localhost:6379

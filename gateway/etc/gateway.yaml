@@ -1,0 +1,17 @@
+Name: demo1-gateway
+Host: localhost
+Port: 8888
+Upstreams:
+  - Grpc:
+      Etcd:
+        Hosts:
+          - 127.0.0.1:2379
+        Key: demo.rpc
+    # protoset mode
+    ProtoSets:
+      - demo.pb
+    # Mappings can also be written in proto options
+    Mappings:
+      - Method: get
+        Path: /demo_ping
+        RpcPath: demo.Demo/Ping
